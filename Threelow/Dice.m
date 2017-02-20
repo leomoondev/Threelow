@@ -27,5 +27,12 @@
     self.currentValue = (NSInteger)arc4random_uniform(6) + 1;
 
 }
+
+- (void) printDice {
+    
+    NSLog(@"Dice value is: %ld", (long)_currentValue);
+    
+}
+
 @end
 
