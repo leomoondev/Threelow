@@ -10,7 +10,9 @@
 
 @interface Dice : NSObject
 
-@property NSInteger currentValue;
+@property (nonatomic) NSInteger currentValue;
+@property (nonatomic) bool isOnHold;
 
-- (void) printDice;
+- (NSInteger) randomizeValue;
+
 @end

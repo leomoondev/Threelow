@@ -14,25 +14,37 @@
 {
     if (self = [super init]) {
         
-        [self randomizeValue];
-        
+        self.currentValue = [self randomizeValue];
+        self.isOnHold = false;
     }
+    
     return self;
 }
 
-
-// Added a method to randomize the value from 1 to 6
-- (void) randomizeValue {
+// Method to randomize the value from 1 to 6
+- (NSInteger) randomizeValue {
     
     self.currentValue = (NSInteger)arc4random_uniform(6) + 1;
-
-}
-
-- (void) printDice {
     
-    NSLog(@"Dice value is: %ld", (long)_currentValue);
-    
+    if(self.currentValue == 1) {
+        self.currentValue = 1;
+    }
+    else if(self.currentValue == 2) {
+        self.currentValue = 2;
+    }
+    else if(self.currentValue == 3) {
+        self.currentValue = 3;
+    }
+    else if(self.currentValue == 4) {
+        self.currentValue = 4;
+    }
+    else if(self.currentValue == 5) {
+        self.currentValue = 5;
+    }
+    else if(self.currentValue == 6) {
+        self.currentValue = 6;
+    }
+    return self.currentValue;
 }
 
 @end
-
